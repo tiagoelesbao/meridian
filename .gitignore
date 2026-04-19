@@ -1,50 +1,9 @@
-# Environment & Secrets
+﻿node_modules/
 .env
-.env.local
-.env.*.local
-*.key
-*.pem
-
-# Dependencies
-node_modules/
-.pnpm-store/
-
-# Build outputs
+.env.*
 dist/
 build/
 .next/
-out/
-
-# IDE & OS
+.aiox/environment-report.json
 .DS_Store
 Thumbs.db
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# AIOX Framework
-.aiox-core/local/
-.claude/settings.local.json
-.aiox/install-log.txt
-.aiox/environment-report.yaml
-.aiox/project-status.yaml
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-
-# Testing
-coverage/
-.nyc_output/
-
-# Temporary files
-tmp/
-temp/
-*.tmp
-
-# Supabase
-.supabase/
-supabase/.temp/
-supabase/functions/.import_map.json

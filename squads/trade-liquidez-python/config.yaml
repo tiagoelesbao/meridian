@@ -1,11 +1,31 @@
-breakeven_candles: 4
-cooldown_candles: 12
-entry_retracement_pct: 0.4
-exit_candles_max: 8
-lookback_h1: 20
-lot_size: 1.0
+# --- ESTRATÉGIA LIQUIDEZ v5.5 (MULTI-PAIR SNIPER) ---
+symbols: ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "NZDUSD", "EURGBP", "EURJPY", "GBPJPY"]
+zone_timeframe: "M15"         # Timeframe das zonas (M15 para maior frequência)
+lookback_zones: 100            # Candles para trás para buscar zonas
+min_displacement_candles: 7    # Força da reversão para confirmar zona
+zone_merge_points: 30          # Proximidade para fundir zonas (Pips * 10)
+cooldown_candles: 12           # Espera 1h (12 candles M5) após operar na mesma zona
+
+# --- FILTROS DE ENTRADA (BACKTESTED v5.4) ---
+min_wick_pct: 0.30             # Pavio mínimo em relação ao corpo
+rsi_overbought: 60             # IFR acima disso para Venda
+rsi_oversold: 40               # IFR abaixo disso para Compra
+use_trend_filter: true         # Só opera a favor da Média de 20 em H1
+require_color_reversal: true    # Exige candle de reversão (Segurança)
+
+# --- GERENCIAMENTO DE RISCO ---
+lot_size: 1.0                  # Lote por operação
+stop_buffer_points: 15         # Folga do Stop Loss
+breakeven_candles: 4           # Move SL para zero após X velas
+exit_candles_max: 8            # Fecha por tempo se não bater TP/SL
+entry_retracement_pct: 0.0     # 0.0 para entrar a Mercado imediatamente
+
+# --- GESTÃO FINANCEIRA DIÁRIA ---
+daily_profit_target: 100.0     # Meta de lucro em USD (Encerra o dia)
+daily_max_loss: 150.0          # Limite de perda em USD (Proteção de capital)
+
+# --- GOVERNANÇA AGÊNTICA ---
+use_agent_consensus: true      # Espera aprovação da Sala de Guerra (AIA)
+consensus_timeout_secs: 30     # Tempo de espera pelos agentes
+execution_mode: "market"       # Execução imediata conforme feedback trader
 magic_number: 123456
-min_displacement_candles: 7
-stop_buffer_points: 5
-symbol: EURUSD
-zone_merge_points: 50
