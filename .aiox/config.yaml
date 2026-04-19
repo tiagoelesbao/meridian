@@ -1,0 +1,12 @@
+﻿version: 2.1.0
+project:
+  name: meridian
+  type: greenfield
+  created: 2026-04-19
+environment:
+  bootstrapped: true
+workflow:
+  current: greenfield-fullstack
+  phase: 0-bootstrap-complete
+permissions:
+  mode: ask
